@@ -124,13 +124,12 @@ with RowNumCTE as(
 select *,
 	    row_number() over (
 	    partition by "ParcelID" ,
-								"PropertyAddress" ,
-								"SalePrice" ,
-								"SaleDate" ,
-								"LegalReference" 
-								order by 
-									"UniqueID " 
-									) as row_num
+				"PropertyAddress" ,
+				"SalePrice" ,
+				"SaleDate" ,
+				"LegalReference" 
+				order by "UniqueID " 
+				) as row_num
 from nashvillehousing n 
 --order by "ParcelID"
 )
